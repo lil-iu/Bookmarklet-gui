@@ -1,8 +1,8 @@
 # Bookmarklet-gui
 funny bookmarklet gui 
 
-
-```just select and drag the code below to your bookmarks bar.
+just select and drag the code below to your bookmarks bar.
+```
 (function() {
   var script = document.createElement('script');
   script.async = 1;
