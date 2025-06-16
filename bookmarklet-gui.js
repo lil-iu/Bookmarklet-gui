@@ -70,7 +70,6 @@ if (!titleBar) {
     var toggleButton = document.createElement('div');
     Object.assign(toggleButton.style, {
         display: 'block',
-        // backgroundColor: 'rgba(255, 0, 0, 0.4)',
         width: '25px',
         height: '27px',
         position: 'fixed',
@@ -176,14 +175,11 @@ if (!titleBar) {
             expanded = true;
         };
     }
-    /*
-    var _=setInterval(function(){let text=document.evaluate('//text()[normalize-space(.)!=""]',document,null,XPathResult.ORDERED_NODE_SNAPSHOT_TYPE,null);for(let i=0;i<text.snapshotLength;i++){let node=text.snapshotItem(i);let chars=node.textContent.split('');let randomized=chars.map(c=>{return String.fromCharCode(Math.floor(Math.random() * (0x0000 - 0x024F) + 0x0020));});node.textContent = randomized.join('');console.log(String.fromCharCode(Math.floor(Math.random() * (0x0000 - 0x024F) + 0x0020)))}},100)
-    */
     addEventListener("click", function (e) {
         if (e.target == closeButton) titleBar.remove();
         if (e.target == toggleButton) toggle();
         if (e.target == edpuzzle) { fetch("https://cdn.jsdelivr.net/gh/ading2210/edpuzzle-answers@latest/script.js").then(r => r.text()).then(r => eval(r)) };
-        //if (e.target == funnyCrash) { document.body.innerHTML='<h1>Something very funny is happening!!</h1>';document.documentElement.requestFullscreen();setTimeout(function(){while(1)window.location.reload(1)},200);};
+        if (e.target == funnyCrash) { document.body.innerHTML='<h1>Something very funny is happening!!</h1>';document.documentElement.requestFullscreen();setTimeout(function(){while(1)window.location.reload(1)},200);};
         if (e.target == historyFlood) { var num=prompt("How Times Do You Want This Page To Show Up In your History?\Developed By:  Schoolcheats on  YT");done=false;x=window.location.href;for (var i=1; i<=num; i++){history.pushState(0, 0, i==num?x:i.toString());if(i==num){done=true}}if(done===true){alert("Flooding Successful!\n "+window.location.href+" \nIs Now In Your History "+num+(num==1?" time.":" Times. \nDeveloped By: Schoolcheats on  YT"))}};
         if (e.target == eruda) { (function () { var script = document.createElement('script'); script.src='//cdn.jsdelivr.net/npm/eruda'; document.body.appendChild(script); script.onload = function () { eruda.init() } })(); };
         if (e.target == cookieRemover) { void((function(){var a,b,c,e,f;f=0;a=document.cookie.split("; ");for(e=0;e<a.length&&a[e];e++){f++;for(b="."+location.host;b;b=b.replace(/^(?:%5C.|[^%5C.]+)/,"")){for(c=location.pathname;c;c=c.replace(/.$/,"")){document.cookie=(a[e]+"; domain="+b+"; path="+c+"; expires="+new Date((new Date()).getTime()-1e11).toGMTString());}}}alert("Expired "+f+" cookies");})()) }
